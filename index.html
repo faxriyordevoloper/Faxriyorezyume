@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#edf1ff">
+  <meta name="description" content="Faxriyor Nabijonov — kiberxavfsizlik talabasi va dasturlashga qiziquvchi yosh mutaxassis.">
+  <title>Faxriyor Nabijonov — Rezyume</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18213b;
+      --muted: #69738d;
+      --accent: #5665df;
+      --line: rgba(255, 255, 255, .76);
+      --paper: rgba(255, 255, 255, .57);
+      --canvas: #edf1ff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 12% 12%, rgba(143, 166, 255, .37), transparent 34%),
+        radial-gradient(ellipse at 88% 30%, rgba(208, 164, 255, .32), transparent 32%),
+        radial-gradient(ellipse at 52% 82%, rgba(132, 218, 231, .28), transparent 35%),
+        var(--canvas);
+      background-attachment: fixed;
+      color: var(--ink);
+      font: 16px/1.65 "Segoe UI", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #aeb8ff; outline-offset: 3px; }
+    .page { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; min-height: 82px; }
+    .brand { font-size: 15px; font-weight: 750; letter-spacing: -.03em; }
+    .brand span { color: var(--accent); }
+    nav { display: flex; align-items: center; gap: 30px; color: var(--muted); font-size: 14px; }
+    nav a:hover { color: var(--accent); }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 19px;
+      border: 1px solid rgba(255, 255, 255, .42);
+      border-radius: 9px;
+      background: rgba(75, 91, 214, .91);
+      box-shadow: 0 8px 22px rgba(75, 91, 214, .2);
+      color: #fff;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 650;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .button:hover { background: rgba(62, 78, 198, .98); transform: translateY(-1px); }
+    .button.secondary { border: 1px solid rgba(255, 255, 255, .88); background: rgba(255, 255, 255, .52); color: var(--ink); box-shadow: 0 8px 22px rgba(44, 58, 103, .06); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .button.secondary:hover { background: rgba(255, 255, 255, .78); }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(250px, .6fr);
+      align-items: center;
+      gap: 56px;
+      padding: 82px 0 76px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 21px; height: 2px; background: currentColor; content: ""; }
+    h1 { max-width: 700px; margin: 0; font-size: clamp(42px, 7vw, 72px); line-height: 1.04; letter-spacing: -.065em; }
+    h1 span { color: var(--accent); }
+    .intro { max-width: 590px; margin: 23px 0 28px; color: var(--muted); font-size: 17px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 11px; }
+    .profile-card {
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, .86);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .53);
+      box-shadow: 0 22px 65px rgba(50, 64, 117, .12), inset 0 1px 0 rgba(255, 255, 255, .9);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+    .avatar {
+      display: grid;
+      width: 72px;
+      height: 72px;
+      margin-bottom: 20px;
+      place-items: center;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, .88);
+      background: rgba(231, 236, 255, .72);
+      color: var(--accent);
+      font-size: 25px;
+      font-weight: 750;
+    }
+    .profile-card h2 { margin: 0; font-size: 19px; letter-spacing: -.025em; }
+    .profile-card > p { margin: 5px 0 22px; color: var(--muted); font-size: 14px; }
+    .details { display: grid; gap: 13px; margin: 0; padding: 0; list-style: none; }
+    .details li { display: flex; gap: 11px; align-items: baseline; color: var(--muted); font-size: 13px; }
+    .details strong { min-width: 73px; color: var(--ink); font-weight: 600; }
+    section { scroll-margin-top: 24px; }
+    .section { padding: 28px 0 54px; }
+    .section-heading { margin: 0 0 22px; font-size: 24px; letter-spacing: -.04em; }
+    .content-card { padding: 30px; border: 1px solid var(--line); border-radius: 15px; background: var(--paper); box-shadow: 0 16px 42px rgba(50, 64, 117, .08), inset 0 1px 0 rgba(255, 255, 255, .86); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    .content-card p { margin: 0; color: var(--muted); }
+    .content-card p + p { margin-top: 12px; }
+    .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .item { padding: 23px 25px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); box-shadow: 0 14px 36px rgba(50, 64, 117, .07), inset 0 1px 0 rgba(255, 255, 255, .84); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .item-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline; }
+    .item h3 { margin: 0; font-size: 16px; }
+    .date { color: var(--accent); font-size: 12px; font-weight: 700; }
+    .item p { margin: 5px 0 0; color: var(--muted); font-size: 14px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill { padding: 8px 13px; border: 1px solid rgba(255, 255, 255, .82); border-radius: 999px; background: rgba(255, 255, 255, .48); color: #46516d; font-size: 13px; box-shadow: 0 6px 18px rgba(50, 64, 117, .05); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin: 16px 0 55px;
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, .2);
+      background: linear-gradient(125deg, rgba(47, 62, 119, .9), rgba(90, 82, 166, .82));
+      color: #fff;
+      box-shadow: 0 20px 50px rgba(47, 62, 119, .18), inset 0 1px 0 rgba(255, 255, 255, .22);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .contact h2 { margin: 0; font-size: 21px; letter-spacing: -.035em; }
+    .contact p { margin: 4px 0 0; color: #c3c9d8; font-size: 14px; }
+    .contact .button { flex-shrink: 0; background: #fff; color: #202b49; }
+    footer { padding: 20px 0 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; text-align: center; }
+    @media (max-width: 720px) {
+      .page { width: min(100% - 32px, 560px); }
+      .topbar { min-height: 70px; }
+      nav { gap: 15px; font-size: 12px; }
+      nav a:nth-child(2), nav a:nth-child(3) { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 34px; padding: 62px 0 52px; }
+      .intro { font-size: 16px; }
+      .profile-card { padding: 24px; }
+      .section { padding-bottom: 38px; }
+      .content-card { padding: 23px; }
+      .columns { grid-template-columns: 1fr; }
+      .contact { align-items: flex-start; flex-direction: column; padding: 25px; }
+    }
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; }
+      .topbar nav, .topbar .button, .actions, .contact .button { display: none; }
+      .hero { padding: 25px 0; }
+      .section { padding: 12px 0 20px; }
+      .profile-card, .content-card, .item { background: #fff; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; break-inside: avoid; }
+      .skill { background: #fff; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+      .contact { margin: 12px 0; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      footer { padding: 10px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Bosh sahifa">REZYUME<span>.</span></a>
+      <nav aria-label="Asosiy navigatsiya">
+        <a href="#men-haqimda">Men haqimda</a>
+        <a href="#tajriba">Tajriba</a>
+        <a href="#konikmalar">Ko‘nikmalar</a>
+        <a href="#aloqa">Aloqa</a>
+      </nav>
+      <button class="button" type="button" onclick="window.print()">PDF / Chop etish</button>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Shaxsiy rezyume</p>
+          <h1 id="hero-title">Salom, men <span>Faxriyor Nabijonov</span></h1>
+          <p class="intro">Kiberxavfsizlik talabasi va dasturlashga qiziquvchi yosh mutaxassis. Maqsadim — professional dasturchi bo‘lib yetishish va foydali IT mahsulotlar yaratish.</p>
+          <div class="actions">
+            <a class="button" href="#aloqa">Men bilan bog‘lanish</a>
+            <a class="button secondary" href="#tajriba">Tajribam bilan tanishing</a>
+          </div>
+        </div>
+        <aside class="profile-card" aria-label="Qisqacha ma'lumot">
+          <div class="avatar" aria-hidden="true">FN</div>
+          <h2>Faxriyor Nabijonov</h2>
+          <p>Kiberxavfsizlik talabasi</p>
+          <ul class="details">
+            <li><strong>Manzil</strong><span>Toshkent, Yakkasaroy tumani</span></li>
+            <li><strong>Email</strong><a href="mailto:akbarmirvaliyev629@gmail.com">akbarmirvaliyev629@gmail.com</a></li>
+            <li><strong>Telefon</strong><a href="tel:+998930971565">+998 93 097 15 65</a></li>
+            <li><strong>Yo‘nalish</strong><span>Kiberxavfsizlik</span></li>
+          </ul>
+        </aside>
+      </section>
+      <section class="section" id="men-haqimda">
+        <h2 class="section-heading">Men haqimda</h2>
+        <div class="content-card">
+          <p>Men axborot texnologiyalari sohasiga qiziqadigan, dasturlash va zamonaviy texnologiyalarni o‘rganishga intiladigan yosh mutaxassisman. Hozirda axborot xavfsizligi va dasturlash yo‘nalishida bilimlarimni rivojlantiryapman. HTML va C++ bilan ishlash bo‘yicha boshlang‘ich bilimlarga egaman.</p>
+          <p>Yangi texnologiyalarni tez o‘zlashtirish, muammolarga yechim topish va jamoada ishlashga qiziqaman. Maqsadim — professional dasturchi bo‘lib yetishish, real loyihalarda ishtirok etish va kelajakda o‘z IT mahsulotlarimni yaratish.</p>
+        </div>
+      </section>
+      <section class="section" id="tajriba">
+        <h2 class="section-heading">Ish tajribasi</h2>
+        <div class="content-card">
+          <p>Hozircha rasmiy ish tajribam yo‘q. Universitetdagi ta’limim va mustaqil izlanishlar orqali bilimlarimni rivojlantirib, real loyihalarda qatnashishga tayyorlanyapman.</p>
+        </div>
+      </section>
+      <section class="section" id="talim">
+        <h2 class="section-heading">Ta’lim</h2>
+        <div class="item">
+          <div class="item-top"><h3>Vatan universiteti</h3><span class="date">Hozirda o‘qimoqda</span></div>
+          <p>Kiberxavfsizlik</p>
+        </div>
+      </section>
+      <section class="section" id="konikmalar">
+        <h2 class="section-heading">Ko‘nikmalar</h2>
+        <div class="skills" aria-label="Kasbiy ko‘nikmalar">
+          <span class="skill">HTML · boshlang‘ich</span>
+          <span class="skill">C++ · boshlang‘ich</span>
+          <span class="skill">Python</span>
+          <span class="skill">Node.js</span>
+          <span class="skill">Dasturlash asoslari</span>
+          <span class="skill">Algoritmik fikrlash</span>
+          <span class="skill">Kompyuter texnologiyalari</span>
+          <span class="skill">Axborot xavfsizligi</span>
+          <span class="skill">Muammolarni tahlil qilish</span>
+          <span class="skill">Jamoada ishlash</span>
+          <span class="skill">Tez o‘rganish</span>
+          <span class="skill">Mustaqil izlanish</span>
+        </div>
+      </section>
+      <section class="contact" id="aloqa">
+        <div>
+          <h2>Birgalikda ishlaymizmi?</h2>
+          <p>Taklif yoki savolingiz bo‘lsa, menga yozing.</p>
+        </div>
+        <a class="button" href="mailto:akbarmirvaliyev629@gmail.com">Xat yozish</a>
+      </section>
+    </main>
+    <footer>© <span id="year"></span> Faxriyor Nabijonov. Barcha huquqlar himoyalangan.</footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
